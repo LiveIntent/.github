@@ -23,6 +23,7 @@ jobs:
 
       - name: Debug 3
         run: |
+          echo "path is: ${{ github.action_path }}"
           ls -al ${{ github.action_path }}
 
       # - name: Lint
