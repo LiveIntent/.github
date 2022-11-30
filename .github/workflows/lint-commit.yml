@@ -14,4 +14,6 @@ jobs:
           fetch-depth: 0
 
       - name: Lint
-        uses: wagoid/commitlint-github-action@v3
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: './commitlint.config.js'
