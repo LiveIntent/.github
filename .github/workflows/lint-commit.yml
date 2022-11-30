@@ -8,25 +8,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug 1
+      - name: Configure
         run: |
-          pwd && ls -al
+          cat > ${{ github.workspace }}/commitlint.config.js << EOF
+            module.exports = {
+              extends: ["@commitlint/config-conventional"],
+              rules:{
+                'subject-case': [0, 'never'],
+                'scope-case': [2, 'always', ['upper-case', 'lower-case']],
+              },
+              ignores: [
+                (message) => message.includes('WIP'),
+                (message) => message.includes('Initial commit'),
+              ]
+            };
+          EOF
 
       - name: Checkout
         uses: actions/checkout@master
         with:
           fetch-depth: 0
 
-      - name: Debug 2
-        run: |
-          pwd && ls -al
-
-      - name: Debug 3
-        run: |
-          echo "path is: ${{ github.action_path }}"
-          ls -al ${{ github.action_path }}
-
-      # - name: Lint
-      #   uses: wagoid/commitlint-github-action@v5
-      #   with:
-      #     configFile: './commitlint.config.js'
+      - name: Lint
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: '${{ github.workspace }}/commitlint.config.js'
