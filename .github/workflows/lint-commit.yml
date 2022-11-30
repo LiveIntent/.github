@@ -23,6 +23,8 @@ jobs:
               ]
             };
           EOF
+          cat ${{ github.workspace }}/commitlint.config.js
+
 
       - name: Checkout
         uses: actions/checkout@master
