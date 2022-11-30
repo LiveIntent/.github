@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
 
       - name: Debug
-        run: cat ./commitlint.config.js
+        run: cat ${{ github.workspace }}/commitlint.config.js
 
       - name: Lint
         uses: wagoid/commitlint-github-action@v5
