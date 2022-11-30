@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
       - name: Configure
         run: |
           cat > ${{ github.workspace }}/commitlint.config.js << EOF
@@ -23,13 +28,6 @@ jobs:
               ]
             };
           EOF
-          cat ${{ github.workspace }}/commitlint.config.js
-
-
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 0
 
       - name: Debug
         run: cat ${{ github.workspace }}/commitlint.config.js
