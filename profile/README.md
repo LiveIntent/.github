@@ -1,4 +1,4 @@
-<p align="center"><a href="https://liveintent.com" target="_blank"><img src="[https://www.liveintent.com/assets/img/brand-assets/LiveIntentLogo-Horiz-Orange.svg](https://www.liveintent.com/wp-content/uploads/2023/05/LiveIntentLogo-Horiz-Orange.svg)" width="400"></a></p>
+<p align="center"><a href="https://liveintent.com" target="_blank"><img src="[[https://www.liveintent.com/assets/img/brand-assets/LiveIntentLogo-Horiz-Orange.svg](https://www.liveintent.com/wp-content/uploads/2023/05/LiveIntentLogo-Horiz-Orange.svg)](https://www.liveintent.com/wp-content/uploads/2023/05/LiveIntentLogo-Horiz-Orange.svg)" width="400"></a></p>
 
 ## About LiveIntent
 
